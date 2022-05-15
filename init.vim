@@ -1,12 +1,7 @@
 call plug#begin('~/.vim/plugged') 
-Plug 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size=1
-hi IndentGuidesEven ctermbg=darkgrey
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kchmck/vim-coffee-script'
-Plug 'nanotech/jellybeans.vim'
 Plug 'preservim/tagbar'
 
 Plug 'scrooloose/nerdcommenter'
@@ -49,6 +44,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 
@@ -89,6 +85,13 @@ Plug 'nvie/vim-flake8'                " python 문법 검사 plugin
 " let g:syntastic_python_flake8_args='--ignore=' 
 Plug 'scrooloose/syntastic'
 
+Plug 'nanotech/jellybeans.vim'
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
 call plug#end()
 
 set nu
@@ -99,7 +102,7 @@ set expandtab
 set autoindent
 set copyindent
 set encoding=UTF-8
-color jellybeans
+colorscheme jellybeans
 
 map <F2> :w!<CR>
 map <F9> :! gcc % -o %<<CR>

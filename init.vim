@@ -46,7 +46,7 @@ let g:airline_powerline_fonts = 1
 
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
